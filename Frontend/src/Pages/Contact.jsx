@@ -10,12 +10,12 @@ function Contact() {
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm();   //form validation ke liye
+  } = useForm();   //for form validation
 
   const onSubmit = async (data) => {
     const userInfo = {
-      access_key: "2af84f4f-d2ad-4d91-b53e-cee0f9b09a61",//web3forms website se key generate kiye hai
-      //name email or message chahiye message send karne ke liye
+      access_key: "2af84f4f-d2ad-4d91-b53e-cee0f9b09a61",//generate from  web3forms website
+      //Require name, email and message to send message
       name: data.username,
       email: data.email,
       message: data.message,
@@ -50,9 +50,9 @@ function Contact() {
                     name="username"
                     placeholder="Your Name"
                     className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-                    {...register("username", { required: true })}//register or required form validation ke liye
+                    {...register("username", { required: true })}//from validation for register or required 
                   />
-                  {errors.username && ( //error hai to 
+                  {errors.username && ( // if error is occr
                     <span className="text-sm text-red-500 font-semibold">
                       This field is required
                     </span>
@@ -64,7 +64,7 @@ function Contact() {
                     name="email"
                     placeholder="Your Email"
                     className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-                    {...register("email", { required: true })}//register or required form validation ke liye
+                    {...register("email", { required: true })}//form validation for register or required 
                   />
                   {errors.email && (
                     <span className="text-sm text-red-500 font-semibold">
@@ -77,7 +77,7 @@ function Contact() {
                     name="message"
                     placeholder="Your Message"
                     className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-                    {...register("message", { required: true })}//register or required form validation ke liye
+                    {...register("message", { required: true })}//form validation for register or required 
                   />
                   {errors.message && (
                     <span className="text-sm text-red-500 font-semibold">

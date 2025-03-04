@@ -49,7 +49,8 @@ const userSchema = new mongoose.Schema({
     token:{
         type:String,
     },
-    //ye batayega ki user kb create hua hai 
+    
+    //This will tell when the user has been created
     createdAt:{
         type:Date,
         default:Date.now,

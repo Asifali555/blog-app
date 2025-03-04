@@ -37,7 +37,7 @@ function Trending() {
                 className="p-4 bg-white border border-gray-400 rounded-lg shadow-md mx-2"
               >
               {/*page move detail */}
-                <Link to={`/blog/${element._id}`}//detail page ka link
+                <Link to={`/blog/${element._id}`}//link of details page
                 >
                   <div className="relative">
                     <img
@@ -72,7 +72,7 @@ function Trending() {
             );
           })
         ) : (
-          //user login nahi hai to
+          //if user is not logged in
           <div className=" flex h-screen items-center justify-center">
             Loading....
           </div>

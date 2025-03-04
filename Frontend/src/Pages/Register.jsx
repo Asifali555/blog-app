@@ -19,20 +19,19 @@ const Register = () => {
   const[photoPreview,setPhotoPreview]=useState('')
 
 
-  //image upload karne karne ke liye
+  //for image upload
   const changePhotoHandler = (e) => {
     console.log(e);
-    const file=e.target.files[0];//image get kar rahe hai
+    const file=e.target.files[0];//get image
     const reader=new FileReader()//image read
     reader.readAsDataURL(file)
     reader.onload =() =>{
-      setPhotoPreview(reader.result);//file ka url ka  paas kar rhe hai
+      setPhotoPreview(reader.result);//pass the file url
       setPhoto(file)
     }
   }
 
-  //backend ko call rahe hai register karane ke liye
-
+  //call backend for register user 
   const handleRegister = async (e) => {
     e.preventDefault();
   
@@ -61,9 +60,8 @@ const Register = () => {
       console.log(data);
       toast.success("User registered successfully");
   
-      // Reset fields
-      setProfile(data)//jb user login kar raha user ka data bhej rahai (context api => AuthPrivder ke profile useState me)
-      setIsAuthenticated(true);//registration karen ke baad authenitcation bna rah
+      setProfile(data)
+      setIsAuthenticated(true);
       setName("");
       setEmail("");
       setPhone("");
@@ -98,7 +96,7 @@ const Register = () => {
             <input
             type='text'
             placeholder='Your Name'
-            value={name}//name => upr useState me define hai
+            value={name}//name is defined in useState
             onChange={(e) => setName(e.target.value)}
             className='w-full p-2 border rounded-md'
             />
@@ -108,7 +106,7 @@ const Register = () => {
             <input
             type='email'
             placeholder='Your Email Address'
-            value={email}//email => upr useState me define hai
+            value={email}//emial is defined in useState
             onChange={(e) => setEmail(e.target.value)}
             className='w-full p-2 border rounded-md'
             />
@@ -118,7 +116,7 @@ const Register = () => {
             <input
             type='number'
             placeholder='Your Phone Number'
-            value={phone}//phone => upr useState me define hai
+            value={phone}//phone is defined in usestate
             onChange={(e) => setPhone(e.target.value)}
             className='w-full p-2 border rounded-md'
             />
@@ -128,7 +126,7 @@ const Register = () => {
             <input
             type='password'
             placeholder='Your Password'
-            value={password}//password => upr useState me define hai
+            value={password}//password is defined in useState
             onChange={(e) => setPassword(e.target.value)}
             className='w-full p-2 border rounded-md'
             />

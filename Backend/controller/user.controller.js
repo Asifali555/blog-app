@@ -124,7 +124,8 @@ export const logout = (req, res) => {
 };
 
 
-//user apne profile dekhne ke liye
+
+//user to view profile
 export const getMyProfile = async (req, res) => {
   const user = await req.user;
   res.status(200).json({ user });
