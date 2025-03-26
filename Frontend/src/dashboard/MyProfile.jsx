@@ -1,10 +1,10 @@
-//Logged in user ka profile show hoga
+// show the profile for logged in user
 
 import React from "react";
 import { useAuth } from "../context/AuthProvider";
 
 function MyProfile() {
-  const { profile } = useAuth();//Authprovider se logged in user ka prrofile show kar rahe hai
+  const { profile } = useAuth();//Showing the profile of the user logged in from the Authprovider
   console.log(profile?.user);
   return (
     <div>

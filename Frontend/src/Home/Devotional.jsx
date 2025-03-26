@@ -18,7 +18,7 @@ function Devotional() {
           {devotionalBlogs && devotionalBlogs.length > 0 ? (
             devotionalBlogs.map((blog, index) => (
               <Link
-                to={`/blog/${blog._id}`}//Detail page ka link hai
+                to={`/blog/${blog._id}`}//link of details page
                 key={index}
                 className="relative rounded-lg overflow-hidden shadow-md transform hover:scale-105 transition-transform duration-300"
               >
@@ -35,7 +35,7 @@ function Devotional() {
               </Link>
             ))
           ) : (
-            //user lgoin nahi hai to
+            //if user is not logged in
             <div className=" flex h-screen items-center justify-center">
               Loading....
             </div>

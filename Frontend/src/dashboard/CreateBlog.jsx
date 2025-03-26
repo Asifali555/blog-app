@@ -10,19 +10,19 @@ function CreateBlog() {
   const [blogImagePreview, setBlogImagePreview] = useState("");
 
 
-  //image upload karne karne ke liye
+  //for image upload
   const changePhotoHandler = (e) => {
     console.log(e);
-    const file=e.target.files[0];//image get kar rahe hai
+    const file=e.target.files[0];//for image get
     const reader=new FileReader()//image read
     reader.readAsDataURL(file)
     reader.onload =() =>{
-      setBlogImagePreview(reader.result);//file ka url ka  paas kar rhe hai
+      setBlogImagePreview(reader.result);//pass the file url
       setBlogImage(file)
     }
   }
 
-  //backend ko call rahe hai register karane ke liye
+  // call bckend for register 
 
   const handleCreateBlog = async (e) => {
     e.preventDefault();

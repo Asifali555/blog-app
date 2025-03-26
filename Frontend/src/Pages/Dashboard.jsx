@@ -16,7 +16,8 @@ const Dashboard = () => {
   console.log("Is Authenticated:", isAuthenticated);
 
 
-  //agr user authenticated(logged in ) nahi hai to home page pr redirect ho jayega
+  
+  // if user is not authenticated(logged in ) then redirect on home page
   if(!isAuthenticated){
     return <Navigate to={"/"} />
   }

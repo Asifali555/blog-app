@@ -5,7 +5,7 @@ const blogSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    blogImage: { // ✅ Fix: Change from String to Object
+    blogImage: { 
         public_id: {
             type: String,
             required: true,

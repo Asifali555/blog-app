@@ -1,4 +1,4 @@
-//jis bhi user blog pr click kare uska details show hoga
+//Whichever user clicks on the blog, its details will be shown.
 
 import axios from "axios";
 import React, { useEffect, useState } from "react";

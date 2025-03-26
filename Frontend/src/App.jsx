@@ -16,7 +16,8 @@ import UpdateBlog from "./dashboard/UpdateBlog";
 import Detail from "./Pages/Detail";
 import Notfound from "./Pages/Notfound";
 function App() {
-  //navbar hide karne ke liye jaise dashboard, login and register pr navbar show nahi karna hai
+  
+//To hide Navbar, like not showing Navbar on dashboard, login and register
   const location = useLocation();
   const hideNavbarFooter = ["/dashboard", "/login", "/register",].includes(location.pathname);
 

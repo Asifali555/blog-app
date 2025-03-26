@@ -1,5 +1,4 @@
-//context => state globally state manage karta hai ye backend se data fetch kar rha hai
-//jb hm logged in kar rahe hai to token generate karr rahe the or frontend me token chahiye use ko authenticate kra ne liye
+
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -11,7 +10,7 @@ export const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
     const [blogs, setBlogs] = useState([]);
     const [profile, setProfile] = useState([]);
-    const [isAuthenticated, setIsAuthenticated] = useState(false);//check karenge ki user valide hai ki nahi(my profile route isAuthenticated ka use hua hai)
+    const [isAuthenticated, setIsAuthenticated] = useState(false);//Will check whether the user is valid or not (My profile root is authenticated used)
 
     useEffect(() => {
         const fetchBlogs = async () => {
@@ -25,11 +24,11 @@ export const AuthProvider = ({ children }) => {
             }
         };
 
-         //logged in user ka profile get kar rhe hai
+         //Getting the profile of logged in userv
         const fetchProfile = async () => {
             try {
                 
-                const { data } = await axios.get("http://localhost:3000/api/users/my-profile", {//backned ka api hai
+                const { data } = await axios.get("http://localhost:3000/api/users/my-profile", {//api of backend
                     withCredentials: true,  // This sends cookies with the request
                     headers: {'Content-Type': 'application/json'}
                 });
@@ -45,7 +44,7 @@ export const AuthProvider = ({ children }) => {
     }, []);
 
     return (
-        <AuthContext.Provider value={{ blogs,setProfile, profile, isAuthenticated, setIsAuthenticated}}> {/*ye jo blogs hai upr me jo ustate hai wahi hai */}
+        <AuthContext.Provider value={{ blogs,setProfile, profile, isAuthenticated, setIsAuthenticated}}> {/*These are the blogs mentioned above in useState */}
             {children}
         </AuthContext.Provider>
     );

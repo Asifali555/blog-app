@@ -31,7 +31,7 @@ const Navbar = () => {
         <div className='font-semibold text-xl'>
           Cilli<span className='text-blue-500'>Blog</span>
         </div>
-        {/*for Desktop navbar  || md=> medium screen size se chota hoga to nav ka ye part hiddn ho jayega*/}
+        {/*for Desktop navbar || md=> If the screen is smaller than medium size, this part of the boat will be hidden*/}
         <div className='mx-6'>
           <ul className='hidden md:flex space-x-6'>
             <Link className='hover:text-blue-500' to="/">HOME</Link>
@@ -45,12 +45,12 @@ const Navbar = () => {
           </div>
         </div>
         <div className='flex space-x-2'>
-          {/*agr user loggedin hai sath sath admin hai to hi dashboard dikhega */}
+          {/*The dashboard will be visible only if the user is logged in and also an administrator */}
           {isAuthenticated && profile?.user?.role==="admin" 
           ? (<Link className='bg-blue-500 text-white font-semibold hover:bg-blue-800 duration-300 px-4 py-2 rounded' to="/dashboard">DASHBOARD</Link>)
           :("")}
 
-          {/*agr user authenticate nahi hai to login button dikhega or authenticated hai to logout button dikhega  */}
+          {/*If the user is not authenticated then the login button will be visible and if the user is authenticated then the logout button will be visible */}
           {!isAuthenticated ? (
             <Link className='bg-red-500 text-white font-semibold hover:bg-red-800 duration-300 px-4 py-2 rounded' to="/Login">LOGIN</Link>
           ) :(
@@ -59,7 +59,8 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/*for Mobile Navbar => show ki value true hai */}
+      
+      {/*for mobile navbar => show value is true */}
       {show && (
         <div  className='bg-white'>
           <ul className='flex flex-col h-screen items-center justify-center space-y-3 md:hidden  text-xl'>

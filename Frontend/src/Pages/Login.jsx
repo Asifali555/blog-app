@@ -27,9 +27,8 @@ const Login = () => {
       console.log(data);
       toast.success( data.message || "User Logined successfully");
   
-      // Reset fields
-      setProfile(data)//jb user login kar raha user ka data bhej rahai (context api => AuthPrivder ke profile useState me)
-      setIsAuthenticated(true);//authencation bna rahe
+      setProfile(data)//When the user is logging in, sending the user's data (Context API=>AuthProvider's profile in his/her context)
+      setIsAuthenticated(true);//creating authentications
       setEmail("");
       setPassword("");
       setRole("");
@@ -60,7 +59,7 @@ const Login = () => {
             <input
             type='email'
             placeholder='Your Email Address'
-            value={email}//email => upr useState me define hai
+            value={email}//emali is defined in useState
             onChange={(e) => setEmail(e.target.value)}
             className='w-full p-2 border rounded-md'
             />
@@ -70,7 +69,7 @@ const Login = () => {
             <input
             type='password'
             placeholder='Your Password'
-            value={password}//password => upr useState me define hai
+            value={password}// password is defined in uststate
             onChange={(e) => setPassword(e.target.value)}
             className='w-full p-2 border rounded-md'
             />

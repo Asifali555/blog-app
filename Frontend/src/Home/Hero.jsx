@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthProvider";
 
 const Hero = () => {
-  const { blogs } = useAuth(); //useAuth =>AuthProvider se liya gya hai jo wha pr backend define hai uska data le rhe hai
+  const { blogs } = useAuth(); //Usauth => Taken from the data provider which is the backend defined there.
   console.log(blogs);
 
   return (
@@ -29,7 +29,7 @@ const Hero = () => {
           );
         })
       ) : (
-        //user login  nahi hai to
+        //if user is not logged in
         <div className='flex h-screen items-center justify-center'>
           Loading.....
         </div>

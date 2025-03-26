@@ -31,7 +31,7 @@ function MyBlogs() {
       .then((res) => {
         toast.success(res.data.message || "Blog deleted successfully");
         navigateTo("/");
-        setMyBlogs((value) => value.filter((blog) => blog._id !== id));//iska use agr user blog delete kar dega to ui blog delte ho jana chahiye 
+        setMyBlogs((value) => value.filter((blog) => blog._id !== id));//This means that if the user deletes the blog then the blog should get deleted.
       })
       .catch((error) => {
         toast.error(error.response.message || "Failed to delete blog");
